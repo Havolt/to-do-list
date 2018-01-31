@@ -12,10 +12,28 @@ function creEl(type, cls, apnd, inHL, src, id){
 let listObj = {
     itemData: [],
     newItem: function(){
-        listObj.itemData.push(document.getElementsByClassName('newListInput')[0].value);
+        if(document.getElementsByClassName('newListInput')[0].value){
+            listObj.itemData.push(document.getElementsByClassName('newListInput')[0].value);
+        }
         document.getElementsByClassName('newListInput')[0].value = '';
-        console.log(listObj.itemData)},
-    getTask: function(button){button.addEventListener('click', this.newItem)}
+        },
+    clearList: function(){
+        document.getElementsByClassName('listContain')[0].innerHTML='';
+    },
+    createList: function(){
+        let listRunner = 0;
+        for(let i = listObj.itemData.length-1; i >= 0; i--){
+            creEl('div', 'listItem', document.getElementsByClassName('listContain')[0]);
+            creEl('div', 'listItemText', document.getElementsByClassName('listItem')[listRunner], listObj.itemData[i]);
+
+            listRunner++;
+        }
+    },
+    getTask: function(button){button.addEventListener('click', function(){
+        listObj.newItem();
+        listObj.clearList();
+        listObj.createList();    
+    })}
 };
 
 
