@@ -9,9 +9,48 @@ html, body{
     text-align: center;
 }
 
+.newListContain{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
 .newListInput{
-    width: 400px;
+    width: 40%;
     height: 40px;
     font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.newListButton{
+    width: 10%;
+    height: 46px;
+    outline: none;
+    user-select: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #24919B;
+    border-left: #42A7B0 2px solid;
+    border-top: #42A7B0 2px solid;
+    border-bottom: #03656E 2px solid;
+    border-right: #03656E 2px solid;
+    color: white;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.newListButton:hover{
+    cursor: pointer;
+    
+}
+
+
+
+.newListButton:active{
+    border-left: #03656E 2px solid;
+    border-top: #03656E 2px solid;
+    border-bottom: #42A7B0 2px solid;
+    border-right: #42A7B0 2px solid;
 }
