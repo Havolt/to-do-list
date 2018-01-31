@@ -13,7 +13,10 @@ let listObj = {
     itemData: [],
     newItem: function(){
         if(document.getElementsByClassName('newListInput')[0].value){
-            listObj.itemData.push(document.getElementsByClassName('newListInput')[0].value);
+            let newObj = {};
+            newObj.text = document.getElementsByClassName('newListInput')[0].value;
+            newObj.complete = false;
+            listObj.itemData.push(newObj);
         }
         document.getElementsByClassName('newListInput')[0].value = '';
         },
@@ -23,9 +26,19 @@ let listObj = {
     createList: function(){
         let listRunner = 0;
         for(let i = listObj.itemData.length-1; i >= 0; i--){
+            listObj.itemData[i].number = listRunner;
+            
             creEl('div', 'listItem', document.getElementsByClassName('listContain')[0]);
-            creEl('div', 'listItemText', document.getElementsByClassName('listItem')[listRunner], listObj.itemData[i]);
-
+            creEl('div', 'listItemCheck', document.getElementsByClassName('listItem')[listRunner]);
+            document.getElementsByClassName('listItemCheck')[listRunner].addEventListener('click', function(){
+                const myCheckNum = listRunner;
+                if(!listObj.itemData[i].complete){
+                    console.log(listObj.itemData[i].number);
+                    document.getElementsByClassName('listItemCheck')[listObj.itemData[i].number].innerHTML = '<i class="fa fa-check"></i>';
+                    listObj.itemData[i].complete = true;
+                }
+            })
+            creEl('div', 'listItemText', document.getElementsByClassName('listItem')[listRunner], listObj.itemData[i].text);
             listRunner++;
         }
     },

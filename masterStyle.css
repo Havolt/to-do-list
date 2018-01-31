@@ -8,6 +8,7 @@ html, body{
     font-size: 4em;
     text-align: center;
     color: #585858;
+    user-select: none;
 }
 
 .newListContain{
@@ -47,8 +48,6 @@ html, body{
     
 }
 
-
-
 .newListButton:active{
     border-left: #03656E 2px solid;
     border-top: #03656E 2px solid;
@@ -61,15 +60,34 @@ html, body{
     background: white;
     width: 90%;
     margin: 40px auto;
-    font-size: 2.3em;
+    
 }
 
 .listItem{
     padding-top: 10px;
     padding-bottom: 10px;
+    margin: 2px auto;
     border: 1px solid rgb(173, 217, 221);
 }
 
+.listItemCheck{
+    width: 20px;
+    height: 19px;
+    border: 1px solid rgb(110, 110, 110);
+    margin-left: 5%;
+    font-size: 1em;
+    padding-top: 1px;
+    text-align: center;
+    display: inline-block;
+    color: rgb(66, 158, 219);
+}
+
+.listItemCheck:hover{
+    background: rgb(210, 234, 243);
+}
+
 .listItemText{
-    margin-left: 10%;
+    font-size: 2.3em;
+    margin-left: 5%;
+    display: inline-block;
 }
