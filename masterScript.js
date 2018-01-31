@@ -11,7 +11,11 @@ function creEl(type, cls, apnd, inHL, src, id){
 
 let listObj = {
     itemData: [],
-    newItem: function(item){this.itemData.push(item);}
+    newItem: function(){
+        listObj.itemData.push(document.getElementsByClassName('newListInput')[0].value);
+        document.getElementsByClassName('newListInput')[0].value = '';
+        console.log(listObj.itemData)},
+    getTask: function(button){button.addEventListener('click', this.newItem)}
 };
 
 
@@ -21,5 +25,7 @@ let listObj = {
     creEl('h1', 'toDoTitle', document.getElementsByClassName('titleContain')[0], 'To Do List');
     creEl('div', 'newListContain', document.getElementById('app'));
     creEl('input', 'newListInput', document.getElementsByClassName('newListContain')[0]);
-    creEl('button', 'newListButton', document.getElementsByClassName('newListContain')[0], 'Add Task')
+    creEl('button', 'newListButton', document.getElementsByClassName('newListContain')[0], 'Add Task');
+    listObj.getTask(document.getElementsByClassName('newListButton')[0]);
+    creEl('div', 'listContain', document.getElementById('app'));
 })()
