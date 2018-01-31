@@ -1,0 +1,17 @@
+html, body{
+    background: #f7f7f7;
+}
+
+.toDoTitle{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 4em;
+    text-align: center;
+}
+
+.newListInput{
+    width: 400px;
+    height: 40px;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
