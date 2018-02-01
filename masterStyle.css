@@ -59,18 +59,23 @@ html, body{
 
 .listContain{
     font-family: Arial, Helvetica, sans-serif;
-    background: white;
+    
     width: 90%;
     margin: 40px auto 0px auto;
     
 }
 
 .listItem{
+    background: white;
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 4px auto 0px auto;
     border: 1px solid rgb(173, 217, 221);
     overflow: hidden;
+}
+
+.listItemHide{
+    display: none;
 }
 
 .listItemCheck{
@@ -121,6 +126,12 @@ html, body{
     user-select: none;
 }
 
+.optionsButton:hover{
+    cursor: pointer;
+    padding-bottom: 12px;
+    transition: padding-bottom 0.2s;
+}
+
 
 .optionsSelect{
     background: #24919B;
@@ -130,3 +141,8 @@ html, body{
     padding-bottom: 14px;
     color: white;
 }
+
+.optionsSelect:hover{
+    padding-bottom: 14px;
+}
+

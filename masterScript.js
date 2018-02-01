@@ -27,8 +27,39 @@ let listObj = {
                         for(let k = 0; k < divs[j].classList.length; k++){if(divs[j].classList[k] == 'optionsSelect'){divs[j].classList.remove('optionsSelect')}}
                     }
                 }
-                console.log(listObj.currOption);
+                //console.log(listObj.currOption);
+                listObj.displayChosen(divs);
             })
+        }
+    },
+    displayChosen: function(divs){
+        let taskItems = document.getElementsByClassName('listItem');
+        for(let i = 0; i < listObj.currOption.length; i++){
+            for(let j = 0; j < taskItems.length; j++){
+                for(let k = 0; k < taskItems[j].classList.length; k++){
+                    if(taskItems[j].classList[k] == 'listItemHide'){
+                        taskItems[j].classList.remove('listItemHide')
+                    }
+                }
+            }
+            if(listObj.currOption[i].selected){
+                
+                if(listObj.currOption[i].num == 0){
+                    for(let j = 0; j < listObj.itemData.length; j++){
+                        console.log(listObj.itemData[j])
+                    }
+                }
+                if(listObj.currOption[i].num == 1){
+                    for(let j = 0; j < listObj.itemData.length; j++){
+                        console.log(listObj.itemData[j])
+                    }
+                }
+                if(listObj.currOption[i].num == 2){
+                    for(let j = 0; j < listObj.itemData.length; j++){
+                        console.log(listObj.itemData[j])
+                    }
+                }
+            }
         }
     },
     newItem: function(){
@@ -53,9 +84,11 @@ let listObj = {
             document.getElementsByClassName('listItemCheck')[listRunner].addEventListener('click', function(){
                 const myCheckNum = listRunner;
                 if(!listObj.itemData[i].complete){
-                    console.log(listObj.itemData[i].number);
                     document.getElementsByClassName('listItemCheck')[listObj.itemData[i].number].innerHTML = '<i class="fa fa-check"></i>';
                     listObj.itemData[i].complete = true;
+                }else{
+                    document.getElementsByClassName('listItemCheck')[listObj.itemData[i].number].innerHTML = '';
+                    listObj.itemData[i].complete = false;
                 }
             })
             creEl('div', 'listItemText', document.getElementsByClassName('listItem')[listRunner], listObj.itemData[i].text);
