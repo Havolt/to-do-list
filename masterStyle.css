@@ -68,7 +68,7 @@ html, body{
 .listItem{
     padding-top: 10px;
     padding-bottom: 10px;
-    margin: 2px auto;
+    margin: 4px auto 0px auto;
     border: 1px solid rgb(173, 217, 221);
     overflow: hidden;
 }
@@ -105,15 +105,28 @@ html, body{
 }
 
 .optionsButton{
-    margin-left: 2%;
+    margin-left: 0.1%;
+    height: 38px;
     width: 22%;
     background: #eeeeee;
-    font-size: 1.6em;
+    font-size: 1.7em;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
     display: inline-block;
-    border-bottom: #fcfcfc 1px solid;
-    border-right: #fcfcfc 1px solid;
+    border-bottom: #c2c2c2 1px solid;
+    border-right: #c2c2c2 1px solid;
+    border-left: #e7e7e7 1px solid;
+    user-select: none;
+}
+
+
+.optionsSelect{
+    background: #24919B;
+    border-bottom: #03656E 1px solid;
+    border-right: #03656E 1px solid;
+    border-left: #42A7B0 1px solid;
+    padding-bottom: 14px;
+    color: white;
 }

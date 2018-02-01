@@ -11,7 +11,26 @@ function creEl(type, cls, apnd, inHL, src, id){
 
 let listObj = {
     itemData: [],
-    currOption: [{name: 'all', selected: true}, {name: 'incomplete', selected: false}, {name: 'finished', selected: false}],
+    currOption: [{num : 0, name: 'all', selected: true}, {num: 1, name: 'incomplete', selected: false}, {num: 2, name: 'finished', selected: false}],
+    addOptionButtonFunction: function(divs){
+        for(let i = 0; i < divs.length; i++){
+            divs[i].addEventListener('click', function(){
+                for(let j = 0; j < listObj.currOption.length; j++){
+                    if(i != j){listObj.currOption[j].selected = false;}else{listObj.currOption[j].selected = true;}
+                }
+                for(let j = 0; j < listObj.currOption.length; j++){
+                    if(listObj.currOption[j].selected){
+                        let classCheck = false;
+                        for(let k = 0; k < divs[j].classList.length; k++){if(divs[j].classList[k] == 'optionsSelect'){classCheck = true}}
+                        if(!classCheck){divs[j].classList.add('optionsSelect')}
+                    }else{
+                        for(let k = 0; k < divs[j].classList.length; k++){if(divs[j].classList[k] == 'optionsSelect'){divs[j].classList.remove('optionsSelect')}}
+                    }
+                }
+                console.log(listObj.currOption);
+            })
+        }
+    },
     newItem: function(){
         if(document.getElementsByClassName('newListInput')[0].value){
             let newObj = {};
@@ -61,7 +80,8 @@ let listObj = {
     listObj.getTask(document.getElementsByClassName('newListButton')[0]);
     creEl('div', 'listContain', document.getElementById('app'));
     creEl('div', 'optionsContain', document.getElementById('app'));
-    creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Show All');
+    creEl('div', ['optionsButton', 'optionsSelect'], document.getElementsByClassName('optionsContain')[0], 'Show All');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');
+    listObj.addOptionButtonFunction(document.getElementsByClassName('optionsButton'));
 })()
