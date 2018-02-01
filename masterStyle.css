@@ -2,6 +2,8 @@ html, body{
     background: #f7f7f7;
 }
 
+
+
 .toDoTitle{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: lighter;
@@ -59,7 +61,7 @@ html, body{
     font-family: Arial, Helvetica, sans-serif;
     background: white;
     width: 90%;
-    margin: 40px auto;
+    margin: 40px auto 0px auto;
     
 }
 
@@ -68,6 +70,7 @@ html, body{
     padding-bottom: 10px;
     margin: 2px auto;
     border: 1px solid rgb(173, 217, 221);
+    overflow: hidden;
 }
 
 .listItemCheck{
@@ -80,6 +83,8 @@ html, body{
     text-align: center;
     display: inline-block;
     color: rgb(66, 158, 219);
+    vertical-align: top;
+    margin-top: 12px;
 }
 
 .listItemCheck:hover{
@@ -90,4 +95,25 @@ html, body{
     font-size: 2.3em;
     margin-left: 5%;
     display: inline-block;
+}
+
+.optionsContain{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+    margin: 40px auto;
+    margin-top: 0px;
+}
+
+.optionsButton{
+    margin-left: 2%;
+    width: 22%;
+    background: #eeeeee;
+    font-size: 1.6em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    border-bottom: #fcfcfc 1px solid;
+    border-right: #fcfcfc 1px solid;
 }

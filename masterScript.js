@@ -11,6 +11,7 @@ function creEl(type, cls, apnd, inHL, src, id){
 
 let listObj = {
     itemData: [],
+    currOption: [{name: 'all', selected: true}, {name: 'incomplete', selected: false}, {name: 'finished', selected: false}],
     newItem: function(){
         if(document.getElementsByClassName('newListInput')[0].value){
             let newObj = {};
@@ -59,4 +60,8 @@ let listObj = {
     creEl('button', 'newListButton', document.getElementsByClassName('newListContain')[0], 'Add Task');
     listObj.getTask(document.getElementsByClassName('newListButton')[0]);
     creEl('div', 'listContain', document.getElementById('app'));
+    creEl('div', 'optionsContain', document.getElementById('app'));
+    creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Show All');
+    creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
+    creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');
 })()
