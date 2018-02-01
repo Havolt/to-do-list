@@ -34,29 +34,24 @@ let listObj = {
     },
     displayChosen: function(divs){
         let taskItems = document.getElementsByClassName('listItem');
-        for(let i = 0; i < listObj.currOption.length; i++){
-            for(let j = 0; j < taskItems.length; j++){
-                for(let k = 0; k < taskItems[j].classList.length; k++){
-                    if(taskItems[j].classList[k] == 'listItemHide'){
-                        taskItems[j].classList.remove('listItemHide')
-                    }
+        for(let j = 0; j < taskItems.length; j++){
+            for(let k = 0; k < taskItems[j].classList.length; k++){
+                if(taskItems[j].classList[k] == 'listItemHide'){
+                    taskItems[j].classList.remove('listItemHide')
                 }
             }
+        }
+        for(let i = 0; i < listObj.currOption.length; i++){
             if(listObj.currOption[i].selected){
-                
-                if(listObj.currOption[i].num == 0){
-                    for(let j = 0; j < listObj.itemData.length; j++){
-                        console.log(listObj.itemData[j])
-                    }
-                }
-                if(listObj.currOption[i].num == 1){
-                    for(let j = 0; j < listObj.itemData.length; j++){
-                        console.log(listObj.itemData[j])
-                    }
-                }
-                if(listObj.currOption[i].num == 2){
-                    for(let j = 0; j < listObj.itemData.length; j++){
-                        console.log(listObj.itemData[j])
+                for(let j = 0; j < listObj.itemData.length; j++){
+                    if(listObj.currOption[i].num == 1){
+                        if(listObj.itemData[j].complete){
+                            taskItems[listObj.itemData[j].number].classList.add('listItemHide');
+                        }
+                    }else if(listObj.currOption[i].num == 2){
+                        if(!listObj.itemData[j].complete){
+                            taskItems[listObj.itemData[j].number].classList.add('listItemHide');
+                        }
                     }
                 }
             }
