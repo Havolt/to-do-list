@@ -87,6 +87,19 @@ let listObj = {
                 }
             })
             creEl('div', 'listItemText', document.getElementsByClassName('listItem')[listRunner], listObj.itemData[i].text);
+            creEl('div', 'listItemCross', document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-times"></i>');
+            document.getElementsByClassName('listItemCross')[listRunner].addEventListener('click', function(){
+                let deletedNum = listObj.itemData[i].number;
+                document.getElementsByClassName('listContain')[0].removeChild(document.getElementsByClassName('listItem')[listObj.itemData[i].number]);
+                listObj.itemData.splice(i, 1)
+                for(let j = 0; j < listObj.itemData.length; j++){
+                    if(listObj.itemData[j].number > deletedNum){
+                        listObj.itemData[j].number--;
+                    }
+                }
+                document.getElementsByClassName('listContain')[0].innerHTML = '';
+                listObj.createList();
+            });
             listRunner++;
         }
     },
