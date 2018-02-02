@@ -134,8 +134,12 @@ html, body{
     cursor: pointer;
 }
 
-.listItemFaceSelect{
+.listItemFavSelect{
     color: gold;
+}
+
+.listItemFavSelect:hover{
+    color: rgb(255, 91, 91);
 }
 
 .optionsContain{

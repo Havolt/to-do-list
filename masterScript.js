@@ -62,10 +62,29 @@ let listObj = {
             let newObj = {};
             newObj.text = document.getElementsByClassName('newListInput')[0].value;
             newObj.complete = false;
+            newObj.starred = false;
             listObj.itemData.push(newObj);
         }
         document.getElementsByClassName('newListInput')[0].value = '';
         },
+    sortFavs: function(){
+
+
+        //ALL THAT MATTERS IS THEIR POSITION IN THE LIST
+
+        for(let i = 0; i < listObj.itemData.length; i++){
+            if(listObj.itemData[i].starred){
+                console.log(listObj.itemData[i])
+                let myObjHld = listObj.itemData[i];
+                listObj.itemData.splice(listObj.itemData.length, 0, myObjHld);
+                listObj.itemData.splice(i, 1);
+                
+            }
+        }
+
+
+
+    },
     clearList: function(){
         document.getElementsByClassName('listContain')[0].innerHTML='';
     },
@@ -100,7 +119,18 @@ let listObj = {
                 document.getElementsByClassName('listContain')[0].innerHTML = '';
                 listObj.createList();
             });
+            if(!listObj.itemData[i].starred){
             creEl('div', 'listItemFav', document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-star"></i>');
+            }else{
+                creEl('div', ['listItemFav', 'listItemFavSelect'], document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-star"></i>')
+            }
+            document.getElementsByClassName('listItemFav')[listRunner].addEventListener('click', function(){
+                listObj.itemData[i].starred = !listObj.itemData[i].starred;
+                listObj.sortFavs();
+                listObj.clearList();
+                listObj.createList(); 
+                
+            })
             listRunner++;
         }
     },
