@@ -105,6 +105,7 @@ html, body{
 
 .listItemCross{
     position: absolute;
+    padding: 0px 3px 0px 3px;
     right: 5px;
     top: 5px;
     font-size: 1.1em;
@@ -112,8 +113,29 @@ html, body{
 }
 
 .listItemCross:hover{
-    color: rgb(129, 63, 63);
+    background: rgb(129, 63, 63);
+    color: #f1f1f1;
+    border-radius: 50%;
     cursor: pointer;
+}
+
+.listItemFav{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.9em;
+    display: inline-block;
+    position: absolute;
+    right: 54px;
+    top: 16px;
+}
+
+.listItemFav:hover{
+    color: rgb(210, 234, 243);
+    cursor: pointer;
+}
+
+.listItemFaceSelect{
+    color: gold;
 }
 
 .optionsContain{
