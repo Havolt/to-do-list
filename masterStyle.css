@@ -101,6 +101,9 @@ html, body{
     font-size: 2.3em;
     margin-left: 5%;
     display: inline-block;
+    width: 76%;
+    overflow-x:hidden;
+    text-overflow: ellipsis;
 }
 
 .listItemCross{
