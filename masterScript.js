@@ -135,7 +135,16 @@ let listObj = {
         }
     },
     clearAll: function(button){
-        button.addEventListener('click', function(){console.log('yakuza')})
+        button.addEventListener('click', function(){
+            
+            if(listObj.itemData.length > 0){
+                //listObj.itemData = [];
+                //listObj.clearList();
+                creEl('div', 'clearAllBG', document.getElementById('app'));
+                creEl('div', 'clearAllWindow', document.getElementsByClassName('clearAllBG')[0]);
+                creEl('div', 'clearAllTop', document.getElementsByClassName('clearAllWindow')[0], 'Clear All Tasks?');
+            }
+        })
     },
     getTask: function(button){button.addEventListener('click', function(){
         listObj.newItem();
