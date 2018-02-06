@@ -230,16 +230,20 @@ html, body{
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 25%;
-    width: 380px;
-    height: 200px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 480px;
+    height: 180px;
     background: #f7f7f7;
     z-index: 2;
 }
 
 .clearAllTop{
     width: 100%;
-    font-size: 1.6em;
+    font-size: 2.4em;
+    padding: 4px 0 4px 0;
     background: #24919B;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -247,4 +251,52 @@ html, body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.clearAllButton{
+    font-size: 2.8em;
+    width: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px 0 4px 0;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 30px;
+    user-select: none;
+}
+
+.clearAllButton:hover{
+    cursor:pointer;
+}
+
+.clearAllYesButton{
+    background: #a85959;
+    border-bottom: #963939 1px solid;
+    border-right: #963939 1px solid;
+    border-left: #c98080 1px solid;
+    color: white;
+}
+
+.clearAllYesButton:active{
+    border-bottom: #c98080 1px solid;
+    border-right: #c98080 1px solid;
+    border-left: #963939 1px solid;
+}
+
+
+.clearAllNoButton{
+    background: #e1e1e1;
+    border-bottom: #bbbbbb 1px solid;
+    border-right: #bbbbbb 1px solid;
+    border-left: #f1f1f1; 1px solid;
+}
+
+.clearAllNoButton:active{
+    border-bottom: #f1f1f1 1px solid;
+    border-right: #f1f1f1 1px solid;
+    border-left: #bbbbbb 1px solid;
+}
+
+
+
 

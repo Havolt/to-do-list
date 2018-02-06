@@ -143,6 +143,18 @@ let listObj = {
                 creEl('div', 'clearAllBG', document.getElementById('app'));
                 creEl('div', 'clearAllWindow', document.getElementsByClassName('clearAllBG')[0]);
                 creEl('div', 'clearAllTop', document.getElementsByClassName('clearAllWindow')[0], 'Clear All Tasks?');
+                creEl('div', ['clearAllButton', 'clearAllYesButton'], document.getElementsByClassName('clearAllWindow')[0], 'Yes');
+                creEl('div', ['clearAllButton', 'clearAllNoButton'], document.getElementsByClassName('clearAllWindow')[0], 'No');
+                document.getElementsByClassName('clearAllYesButton')[0].addEventListener('click', function(){
+                    console.log('yes');
+                    listObj.itemData = [];
+                    listObj.clearList();
+                    document.getElementsByClassName('clearAllBG')[0].parentNode.removeChild(document.getElementsByClassName('clearAllBG')[0]);
+                });
+                document.getElementsByClassName('clearAllNoButton')[0].addEventListener('click', function(){
+                    console.log('no');
+                    document.getElementsByClassName('clearAllBG')[0].parentNode.removeChild(document.getElementsByClassName('clearAllBG')[0]);
+                });
             }
         })
     },
