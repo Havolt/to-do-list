@@ -82,6 +82,19 @@ let listObj = {
             }
         }
 
+        for(let i = 0; i < listObj.itemData.length; i++){
+            if(!listObj.itemData[i].starred){
+                
+                for(let j = i; j >= 0; j--){
+                    if(listObj.itemData[j].starred){
+                        let myObjHld = listObj.itemData[j];
+                        listObj.itemData.splice(i+1, 0, myObjHld);
+                        listObj.itemData.splice(j, 1);
+                    }
+                }
+            }
+        }
+
 
 
     },
