@@ -134,6 +134,9 @@ let listObj = {
             listRunner++;
         }
     },
+    clearAll: function(button){
+        button.addEventListener('click', function(){console.log('yakuza')})
+    },
     getTask: function(button){button.addEventListener('click', function(){
         listObj.newItem();
         listObj.clearList();
@@ -156,4 +159,6 @@ let listObj = {
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');
     listObj.addOptionButtonFunction(document.getElementsByClassName('optionsButton'));
+    creEl('div', 'clearButton', document.getElementsByClassName('optionsContain')[0], 'Clear All');
+    listObj.clearAll(document.getElementsByClassName('clearButton')[0]);
 })()
