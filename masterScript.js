@@ -151,19 +151,19 @@ let listObj = {
     hideOptions: function(){
         if(listObj.itemData.length > 0){
             let optionsClassTrue = true;
-            for(let i = 0; i < document.getElementsByClassName('optionsContain')[0].classList.length; i++ ){
-                if(document.getElementsByClassName('optionsContain')[0].classList[i] == 'optionsContainHide'){
-                    document.getElementsByClassName('optionsContain')[0].classList.remove('optionsContainHide')
+            for(let i = 0; i < document.getElementsByClassName('optionsAllContain')[0].classList.length; i++ ){
+                if(document.getElementsByClassName('optionsAllContain')[0].classList[i] == 'optionsContainHide'){
+                    document.getElementsByClassName('optionsAllContain')[0].classList.remove('optionsContainHide')
                 }
             }
         }else if(listObj.itemData.length < 1){
             let optionsClassTrue = true
-            for(let i = 0; i < document.getElementsByClassName('optionsContain')[0].classList.length; i++ ){
-                if(document.getElementsByClassName('optionsContain')[0].classList[i] == 'optionsContainHide'){
+            for(let i = 0; i < document.getElementsByClassName('optionsAllContain')[0].classList.length; i++ ){
+                if(document.getElementsByClassName('optionsAllContain')[0].classList[i] == 'optionsContainHide'){
                     optionsClassTrue = false;
                 }
             }
-            if(optionsClassTrue){document.getElementsByClassName('optionsContain')[0].classList.add('optionsContainHide')}
+            if(optionsClassTrue){document.getElementsByClassName('optionsAllContain')[0].classList.add('optionsContainHide')}
         }
     },
     clearAll: function(button){
@@ -187,6 +187,13 @@ let listObj = {
             }
         })
     },
+    showOptions: function(button){
+        button.addEventListener('click', function(){
+            console.log('burger');
+            button.classList.add('optionsMenuHide');
+            document.getElementsByClassName('optionsContain')[0].classList.add('optionsContainShow');
+        })
+    },
     getTask: function(button){button.addEventListener('click', function(){
         listObj.newItem();
         listObj.clearList();
@@ -206,7 +213,10 @@ let listObj = {
     creEl('button', 'newListButton', document.getElementsByClassName('newListContain')[0], 'Add Task');
     listObj.getTask(document.getElementsByClassName('newListButton')[0]);
     creEl('div', 'listContain', document.getElementById('app'));
-    creEl('div', ['optionsContain', 'optionsContainHide'], document.getElementById('app'));
+    creEl('div', ['optionsAllContain', 'optionsContainHide'], document.getElementById('app'));
+    creEl('div', 'optionsMenu', document.getElementsByClassName('optionsAllContain')[0], '<i class="fa fa-bars"></i>');
+    listObj.showOptions(document.getElementsByClassName('optionsMenu')[0]);
+    creEl('div', 'optionsContain' , document.getElementsByClassName('optionsAllContain')[0]);
     creEl('div', ['optionsButton', 'optionsSelect'], document.getElementsByClassName('optionsContain')[0], 'Show All');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');
