@@ -193,7 +193,6 @@ let listObj = {
         listObj.sortFavs(); 
         listObj.hideOptions();
         listObj.createList();
-           
     })}
 };
 
