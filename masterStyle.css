@@ -75,6 +75,10 @@ html, body{
     position: relative;
 }
 
+.listItemGold{
+    background: #fffcf3
+}
+
 .listItemHide{
     display: none;
 }
@@ -91,6 +95,7 @@ html, body{
     color: rgb(66, 158, 219);
     vertical-align: top;
     margin-top: 12px;
+    background: white;
 }
 
 .listItemCheck:hover{

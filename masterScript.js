@@ -27,7 +27,6 @@ let listObj = {
                         for(let k = 0; k < divs[j].classList.length; k++){if(divs[j].classList[k] == 'optionsSelect'){divs[j].classList.remove('optionsSelect')}}
                     }
                 }
-                //console.log(listObj.currOption);
                 listObj.displayChosen(divs);
             })
         }
@@ -135,7 +134,8 @@ let listObj = {
             if(!listObj.itemData[i].starred){
             creEl('div', 'listItemFav', document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-star"></i>');
             }else{
-                creEl('div', ['listItemFav', 'listItemFavSelect'], document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-star"></i>')
+                creEl('div', ['listItemFav', 'listItemFavSelect'], document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-star"></i>');
+                document.getElementsByClassName('listItem')[listRunner].classList.add('listItemGold');
             }
             document.getElementsByClassName('listItemFav')[listRunner].addEventListener('click', function(){
                 listObj.itemData[i].starred = !listObj.itemData[i].starred;
@@ -176,14 +176,12 @@ let listObj = {
                 creEl('div', ['clearAllButton', 'clearAllYesButton'], document.getElementsByClassName('clearAllWindow')[0], 'Yes');
                 creEl('div', ['clearAllButton', 'clearAllNoButton'], document.getElementsByClassName('clearAllWindow')[0], 'No');
                 document.getElementsByClassName('clearAllYesButton')[0].addEventListener('click', function(){
-                    console.log('yes');
                     listObj.itemData = [];
                     listObj.clearList();
                     listObj.hideOptions();
                     document.getElementsByClassName('clearAllBG')[0].parentNode.removeChild(document.getElementsByClassName('clearAllBG')[0]);
                 });
                 document.getElementsByClassName('clearAllNoButton')[0].addEventListener('click', function(){
-                    console.log('no');
                     document.getElementsByClassName('clearAllBG')[0].parentNode.removeChild(document.getElementsByClassName('clearAllBG')[0]);
                 });
             }
@@ -192,8 +190,10 @@ let listObj = {
     getTask: function(button){button.addEventListener('click', function(){
         listObj.newItem();
         listObj.clearList();
+        listObj.sortFavs(); 
         listObj.hideOptions();
-        listObj.createList();    
+        listObj.createList();
+           
     })}
 };
 
