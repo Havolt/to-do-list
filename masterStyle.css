@@ -165,6 +165,10 @@ html, body{
     display: none;
 }
 
+.optionsMinimize{
+    display: none;
+}
+
 .optionsButton{
     margin-left: 0.1%;
     height: 38px;
@@ -340,16 +344,47 @@ html, body{
 
 @media only screen and (max-width: 550px) {
 
+    .optionsContain{
+        
+        width: 80%;
+    }
+
     .optionsMenu{
         display: inline-block;
         padding: 4px 8px;
-        margin-left: 6%;
+        margin-left: 10%;
         font-size: 1.5em;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         background: #24919B;
         color: white;
     }
+
+    .optionsMinimize{
+        
+        display: inline-block;
+        text-align: center;
+        font-size: 1.5em;
+        background: rgb(255, 136, 67);
+        color: white;
+        padding: 0px 6px 10px 6px;
+    }
+
+    .optionsButton{
+        display: block;
+        font-size: 1.9em;
+        height: 40px;
+        width: auto;;
+        padding: 0;
+        border-radius: 0;
+        background: rgba(0,0,0, 0.6);
+        border-top: 1px solid #aaaaaa;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        margin: 0;
+    }
+
 
     .optionsMenuHide{
         display: none;
@@ -368,7 +403,13 @@ html, body{
     }
 
     .clearButton{
-        font-size: 1em;
+        font-size: 1.9em;
+        border-top: 1px solid #aaaaaa;
+        height: 40px;
         padding-bottom: 20px;
+        display: block;
+        width: auto;
+        margin: 0;
+        padding: 0;
     }
 }

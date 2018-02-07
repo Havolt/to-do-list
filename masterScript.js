@@ -217,6 +217,7 @@ let listObj = {
     creEl('div', 'optionsMenu', document.getElementsByClassName('optionsAllContain')[0], '<i class="fa fa-bars"></i>');
     listObj.showOptions(document.getElementsByClassName('optionsMenu')[0]);
     creEl('div', 'optionsContain' , document.getElementsByClassName('optionsAllContain')[0]);
+    creEl('div', 'optionsMinimize', document.getElementsByClassName('optionsContain')[0], '<i class="fa fa-window-minimize"></i>');
     creEl('div', ['optionsButton', 'optionsSelect'], document.getElementsByClassName('optionsContain')[0], 'Show All');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');
