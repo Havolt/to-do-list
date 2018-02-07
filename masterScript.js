@@ -141,18 +141,35 @@ let listObj = {
                 listObj.itemData[i].starred = !listObj.itemData[i].starred;
                 listObj.sortFavs();
                 listObj.clearList();
+                listObj.hideOptions();
                 listObj.createList(); 
                 
             })
             listRunner++;
         }
     },
+    hideOptions: function(){
+        if(listObj.itemData.length > 0){
+            let optionsClassTrue = true;
+            for(let i = 0; i < document.getElementsByClassName('optionsContain')[0].classList.length; i++ ){
+                if(document.getElementsByClassName('optionsContain')[0].classList[i] == 'optionsContainHide'){
+                    document.getElementsByClassName('optionsContain')[0].classList.remove('optionsContainHide')
+                }
+            }
+        }else if(listObj.itemData.length < 1){
+            let optionsClassTrue = true
+            for(let i = 0; i < document.getElementsByClassName('optionsContain')[0].classList.length; i++ ){
+                if(document.getElementsByClassName('optionsContain')[0].classList[i] == 'optionsContainHide'){
+                    optionsClassTrue = false;
+                }
+            }
+            if(optionsClassTrue){document.getElementsByClassName('optionsContain')[0].classList.add('optionsContainHide')}
+        }
+    },
     clearAll: function(button){
         button.addEventListener('click', function(){
             
             if(listObj.itemData.length > 0){
-                //listObj.itemData = [];
-                //listObj.clearList();
                 creEl('div', 'clearAllBG', document.getElementById('app'));
                 creEl('div', 'clearAllWindow', document.getElementsByClassName('clearAllBG')[0]);
                 creEl('div', 'clearAllTop', document.getElementsByClassName('clearAllWindow')[0], 'Clear All Tasks?');
@@ -162,6 +179,7 @@ let listObj = {
                     console.log('yes');
                     listObj.itemData = [];
                     listObj.clearList();
+                    listObj.hideOptions();
                     document.getElementsByClassName('clearAllBG')[0].parentNode.removeChild(document.getElementsByClassName('clearAllBG')[0]);
                 });
                 document.getElementsByClassName('clearAllNoButton')[0].addEventListener('click', function(){
@@ -174,6 +192,7 @@ let listObj = {
     getTask: function(button){button.addEventListener('click', function(){
         listObj.newItem();
         listObj.clearList();
+        listObj.hideOptions();
         listObj.createList();    
     })}
 };
@@ -188,7 +207,7 @@ let listObj = {
     creEl('button', 'newListButton', document.getElementsByClassName('newListContain')[0], 'Add Task');
     listObj.getTask(document.getElementsByClassName('newListButton')[0]);
     creEl('div', 'listContain', document.getElementById('app'));
-    creEl('div', 'optionsContain', document.getElementById('app'));
+    creEl('div', ['optionsContain', 'optionsContainHide'], document.getElementById('app'));
     creEl('div', ['optionsButton', 'optionsSelect'], document.getElementsByClassName('optionsContain')[0], 'Show All');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');

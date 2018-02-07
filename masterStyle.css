@@ -152,6 +152,10 @@ html, body{
     margin-top: 0px;
 }
 
+.optionsContainHide{
+    display: none;
+}
+
 .optionsButton{
     margin-left: 0.1%;
     height: 38px;
