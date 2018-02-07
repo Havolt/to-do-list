@@ -344,8 +344,24 @@ html, body{
 
 @media only screen and (max-width: 550px) {
 
+    .clearAllWindow{
+        width: 96%;
+    }
+
+    .clearAllButton{
+        width: 30%;
+        margin-left: 12%;
+    }
+
+    .clearAllTop{
+        font-size: 2.1em;
+    }
+
+    .newListButton{
+        width: 18%;
+    }
+
     .optionsContain{
-        
         width: 80%;
     }
 
@@ -360,6 +376,10 @@ html, body{
         color: white;
     }
 
+    .optionsMenu:hover{
+        cursor: pointer;
+    }
+
     .optionsMinimize{
         
         display: inline-block;
@@ -370,7 +390,12 @@ html, body{
         padding: 0px 6px 10px 6px;
     }
 
+    .optionsMinimize{
+        cursor: pointer;
+    }
+
     .optionsButton{
+        color: white;
         display: block;
         font-size: 1.9em;
         height: 40px;
@@ -383,6 +408,14 @@ html, body{
         border-right: 0px;
         border-bottom: 0px;
         margin: 0;
+    }
+
+    .optionsButton:hover{
+        padding: 0;
+    }
+
+    .optionsSelect{
+        background: #24919B;
     }
 
 
@@ -410,6 +443,10 @@ html, body{
         display: block;
         width: auto;
         margin: 0;
+        padding: 0;
+    }
+
+    .clearButton:hover{
         padding: 0;
     }
 }

@@ -187,13 +187,19 @@ let listObj = {
             }
         })
     },
-    showOptions: function(button){
+    showOptionsBurger: function(button){
         button.addEventListener('click', function(){
-            console.log('burger');
             button.classList.add('optionsMenuHide');
             document.getElementsByClassName('optionsContain')[0].classList.add('optionsContainShow');
         })
     },
+    hideOptionsBurger: function(button){
+        button.addEventListener('click', function(){
+            document.getElementsByClassName('optionsMenu')[0].classList.remove('optionsMenuHide');
+            document.getElementsByClassName('optionsContain')[0].classList.remove('optionsContainShow');
+        })
+    },
+    
     getTask: function(button){button.addEventListener('click', function(){
         listObj.newItem();
         listObj.clearList();
@@ -215,13 +221,21 @@ let listObj = {
     creEl('div', 'listContain', document.getElementById('app'));
     creEl('div', ['optionsAllContain', 'optionsContainHide'], document.getElementById('app'));
     creEl('div', 'optionsMenu', document.getElementsByClassName('optionsAllContain')[0], '<i class="fa fa-bars"></i>');
-    listObj.showOptions(document.getElementsByClassName('optionsMenu')[0]);
+    listObj.showOptionsBurger(document.getElementsByClassName('optionsMenu')[0]);
     creEl('div', 'optionsContain' , document.getElementsByClassName('optionsAllContain')[0]);
     creEl('div', 'optionsMinimize', document.getElementsByClassName('optionsContain')[0], '<i class="fa fa-window-minimize"></i>');
+    listObj.hideOptionsBurger(document.getElementsByClassName('optionsMinimize')[0]);
     creEl('div', ['optionsButton', 'optionsSelect'], document.getElementsByClassName('optionsContain')[0], 'Show All');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Incomplete');
     creEl('div', 'optionsButton', document.getElementsByClassName('optionsContain')[0], 'Finished');
     listObj.addOptionButtonFunction(document.getElementsByClassName('optionsButton'));
     creEl('div', 'clearButton', document.getElementsByClassName('optionsContain')[0], 'Clear All');
     listObj.clearAll(document.getElementsByClassName('clearButton')[0]);
+    document.addEventListener('keydown', function(e){if(e.key == 'Enter'){
+        listObj.newItem();
+        listObj.clearList();
+        listObj.sortFavs(); 
+        listObj.hideOptions();
+        listObj.createList();
+    }});
 })()
