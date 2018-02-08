@@ -130,6 +130,7 @@ let listObj = {
                 }
                 document.getElementsByClassName('listContain')[0].innerHTML = '';
                 listObj.createList();
+                listObj.hideOptions();
             });
             if(!listObj.itemData[i].starred){
             creEl('div', 'listItemFav', document.getElementsByClassName('listItem')[listRunner], '<i class="fa fa-star"></i>');

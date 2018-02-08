@@ -159,6 +159,7 @@ html, body{
     width: 90%;
     margin: 40px auto;
     margin-top: 0px;
+    border-top: rgb(173, 217, 221) solid 1px;
 }
 
 .optionsContainHide{
@@ -363,6 +364,7 @@ html, body{
 
     .optionsContain{
         width: 80%;
+        border-top: 0px;
     }
 
     .optionsMenu{
@@ -410,13 +412,20 @@ html, body{
         margin: 0;
     }
 
+
     .optionsButton:hover{
         padding: 0;
+        background: rgba(68, 68, 68, 0.6);
     }
 
     .optionsSelect{
         background: #24919B;
     }
+
+    .optionsSelect:hover{
+        background: #24919B;
+    }
+
 
 
     .optionsMenuHide{
@@ -448,5 +457,6 @@ html, body{
 
     .clearButton:hover{
         padding: 0;
+        background: #963939;
     }
 }
