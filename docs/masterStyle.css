@@ -1,0 +1,462 @@
+html, body{
+    background: #f7f7f7;
+}
+
+
+
+.toDoTitle{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 4em;
+    text-align: center;
+    color: #585858;
+    user-select: none;
+}
+
+.newListContain{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.newListInput{
+    width: 60%;
+    height: 50px;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.newListButton{
+    width: 10%;
+    height: 56px;
+    outline: none;
+    user-select: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #24919B;
+    border-left: #42A7B0 2px solid;
+    border-top: #42A7B0 2px solid;
+    border-bottom: #03656E 2px solid;
+    border-right: #03656E 2px solid;
+    color: white;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.newListButton:hover{
+    cursor: pointer;
+    
+}
+
+.newListButton:active{
+    border-left: #03656E 2px solid;
+    border-top: #03656E 2px solid;
+    border-bottom: #42A7B0 2px solid;
+    border-right: #42A7B0 2px solid;
+}
+
+.listContain{
+    font-family: Arial, Helvetica, sans-serif;
+    
+    width: 90%;
+    margin: 40px auto 0px auto;
+    
+}
+
+.listItem{
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 4px auto 0px auto;
+    border: 1px solid rgb(173, 217, 221);
+    overflow: hidden;
+    position: relative;
+}
+
+.listItemGold{
+    background: #fffcf3
+}
+
+.listItemHide{
+    display: none;
+}
+
+.listItemCheck{
+    width: 20px;
+    height: 19px;
+    border: 1px solid rgb(110, 110, 110);
+    margin-left: 5%;
+    font-size: 1em;
+    padding-top: 1px;
+    text-align: center;
+    display: inline-block;
+    color: rgb(66, 158, 219);
+    vertical-align: top;
+    margin-top: 12px;
+    background: white;
+}
+
+.listItemCheck:hover{
+    background: rgb(210, 234, 243);
+}
+
+.listItemText{
+    font-size: 2.3em;
+    margin-left: 5%;
+    display: inline-block;
+    width: 76%;
+    overflow-x:hidden;
+    text-overflow: ellipsis;
+}
+
+.listItemCross{
+    position: absolute;
+    padding: 0px 3px 0px 3px;
+    right: 5px;
+    top: 5px;
+    font-size: 1.1em;
+    color: #787878;
+}
+
+.listItemCross:hover{
+    background: rgb(129, 63, 63);
+    color: #f1f1f1;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.listItemFav{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.9em;
+    display: inline-block;
+    position: absolute;
+    right: 54px;
+    top: 16px;
+}
+
+.listItemFav:hover{
+    color: rgb(210, 234, 243);
+    cursor: pointer;
+}
+
+.listItemFavSelect{
+    color: gold;
+}
+
+.listItemFavSelect:hover{
+    color: rgb(255, 91, 91);
+}
+
+.optionsMenu{
+    display: none;
+}
+
+.optionsContain{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+    margin: 40px auto;
+    margin-top: 0px;
+    border-top: rgb(173, 217, 221) solid 1px;
+}
+
+.optionsContainHide{
+    display: none;
+}
+
+.optionsMinimize{
+    display: none;
+}
+
+.optionsButton{
+    margin-left: 0.1%;
+    height: 38px;
+    width: 20%;
+    background: #eeeeee;
+    font-size: 1.7em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    display: inline-block;
+    border-bottom: #c2c2c2 1px solid;
+    border-right: #c2c2c2 1px solid;
+    border-left: #e7e7e7 1px solid;
+    user-select: none;
+}
+
+.optionsButton:hover{
+    cursor: pointer;
+    padding-bottom: 12px;
+    transition: padding-bottom 0.2s;
+}
+
+
+.optionsSelect{
+    background: #24919B;
+    border-bottom: #03656E 1px solid;
+    border-right: #03656E 1px solid;
+    border-left: #42A7B0 1px solid;
+    padding-bottom: 14px;
+    color: white;
+}
+
+.optionsSelect:hover{
+    padding-bottom: 14px;
+}
+
+.clearButton{
+    margin-left: 14%;
+    height: 20px;
+    width: 8%;
+    background: #a85959;
+    color: white;
+    font-size: 1em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 12px;
+    text-align: center;
+    display: inline-block;
+    border-bottom: #963939 1px solid;
+    border-right: #963939 1px solid;
+    border-left: #c98080; 1px solid;
+    vertical-align: top;
+    user-select: none;
+}
+
+.clearButton:hover{
+    cursor: pointer;
+    padding-bottom: 14px;
+    transition: padding-bottom 0.2s;
+}
+
+.clearAllBG{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.7);
+}
+
+.clearAllWindow{
+    position: fixed;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 480px;
+    height: 180px;
+    background: #f7f7f7;
+    z-index: 2;
+}
+
+.clearAllTop{
+    width: 100%;
+    font-size: 2.4em;
+    padding: 4px 0 4px 0;
+    background: #24919B;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clearAllButton{
+    font-size: 2.8em;
+    width: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px 0 4px 0;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 30px;
+    user-select: none;
+}
+
+.clearAllButton:hover{
+    cursor:pointer;
+}
+
+.clearAllYesButton{
+    background: #a85959;
+    border-bottom: #963939 1px solid;
+    border-right: #963939 1px solid;
+    border-left: #c98080 1px solid;
+    color: white;
+}
+
+.clearAllYesButton:active{
+    border-bottom: #c98080 1px solid;
+    border-right: #c98080 1px solid;
+    border-left: #963939 1px solid;
+}
+
+
+.clearAllNoButton{
+    background: #e1e1e1;
+    border-bottom: #bbbbbb 1px solid;
+    border-right: #bbbbbb 1px solid;
+    border-left: #f1f1f1; 1px solid;
+}
+
+.clearAllNoButton:active{
+    border-bottom: #f1f1f1 1px solid;
+    border-right: #f1f1f1 1px solid;
+    border-left: #bbbbbb 1px solid;
+}
+
+
+@media only screen and (max-width: 880px) {
+
+    .listItemText{
+        font-size: 1.8em;
+        margin-top: 7px;
+    }
+    .clearButton{
+        font-size: 1.1em;
+        padding-bottom: 6px;
+        width: 14%;
+        margin-left: 5%;
+    }
+
+    .optionsButton{
+        width: 20%;
+        font-size: 1.2em;
+    }
+
+    .newListButton{
+        width: 14%;
+    }
+
+    .newListInput{
+      border: 2px solid rgb(187, 187, 187);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    .clearAllWindow{
+        width: 96%;
+    }
+
+    .clearAllButton{
+        width: 30%;
+        margin-left: 12%;
+    }
+
+    .clearAllTop{
+        font-size: 2.1em;
+    }
+
+    .newListButton{
+        width: 18%;
+    }
+
+    .optionsContain{
+        width: 80%;
+        border-top: 0px;
+    }
+
+    .optionsMenu{
+        display: inline-block;
+        padding: 4px 8px;
+        margin-left: 10%;
+        font-size: 1.5em;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background: #24919B;
+        color: white;
+    }
+
+    .optionsMenu:hover{
+        cursor: pointer;
+    }
+
+    .optionsMinimize{
+        
+        display: inline-block;
+        text-align: center;
+        font-size: 1.5em;
+        background: rgb(255, 136, 67);
+        color: white;
+        padding: 0px 6px 10px 6px;
+    }
+
+    .optionsMinimize{
+        cursor: pointer;
+    }
+
+    .optionsButton{
+        color: white;
+        display: block;
+        font-size: 1.9em;
+        height: 40px;
+        width: auto;;
+        padding: 0;
+        border-radius: 0;
+        background: rgba(0,0,0, 0.6);
+        border-top: 1px solid #aaaaaa;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        margin: 0;
+    }
+
+
+    .optionsButton:hover{
+        padding: 0;
+        background: rgba(68, 68, 68, 0.6);
+    }
+
+    .optionsSelect{
+        background: #24919B;
+    }
+
+    .optionsSelect:hover{
+        background: #24919B;
+    }
+
+
+
+    .optionsMenuHide{
+        display: none;
+    }
+
+    .optionsContain{
+        display: none;
+    }
+
+    .optionsContainShow{
+        display: block;
+    }
+    .listItemText{
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+
+    .clearButton{
+        font-size: 1.9em;
+        border-top: 1px solid #aaaaaa;
+        height: 40px;
+        padding-bottom: 20px;
+        display: block;
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .clearButton:hover{
+        padding: 0;
+        background: #963939;
+    }
+}
